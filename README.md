@@ -5,7 +5,11 @@ This script can be used for making manual backups of a single VM. It is intended
 The script comes with the file bck_config.cfg. Set the datastore path for the backup destination in this config file. To view the help, run this:
 ```./bck.sh -h```
 
-# Disclaimer:
-This script is NOT thoroughly tested. You can mess up your VM('s) and your host if something goes wrong.
+To make a backup of a VM, run this:
+```./bck.sh -n web01```
 
-Backup script for backing up single VM's from the ESXi shell.
+The script runs in the shell session of the user, who will usually be connected via SSH. If the SSH sessions disconnects, the backup job will be terminated. Run the script like this to make it run in the background and have a chance that the job will finish even if the SSH session disconnects:
+```setsid ./bck -n web01 &```
+
+# Disclaimer:
+This script is NOT thoroughly tested. You can mess up your VM('s) and your host if something goes wrong. Due to complications when managing snapshots with vim-cmd, using the script to make a backup of the VM will remove ALL snapshots, not just the snapshot created for the backup job.
