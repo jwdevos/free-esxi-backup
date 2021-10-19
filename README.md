@@ -4,6 +4,8 @@ This script can be used for making manual backups of a single VM. It is intended
 For automated, scheduled backups, [ghettoVCB](https://github.com/lamw/ghettoVCB) is highly recommended. This manual script just fills a void for me when I want to make a quick backup of a VM.
 
 # How to use
+Place the script files (bck.sh and bck_config.cfg) in a sensible place. I created '''/usr/local''' for this.
+
 The script comes with the file bck_config.cfg. Set the datastore path for the backup destination in this config file. To view the help, run this:
 ```./bck.sh -h```
 
