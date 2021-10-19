@@ -1,4 +1,6 @@
 #!/bin/sh
+# free-esxi-backup bck.sh 2021 Jaap de Vos
+#
 # This script makes a backup of the specified VM.
 #
 # The backup destination gets configured in bck_config.cfg.
